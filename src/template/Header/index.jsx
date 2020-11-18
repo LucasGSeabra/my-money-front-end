@@ -1,13 +1,18 @@
 import React from 'react'
-import {Header, Nav} from 'tabler-react'
+import {Header, Nav, Site, Icon} from 'tabler-react'
 import './style.css'
 
 function PageHeader(props) {
     return(
         <div id="page-header">
-            <Header.H1>MyMoney</Header.H1>
-            <Nav className="nav">
-            </Nav>
+            <Site.Header className="nav">
+                <Header.H1>
+                    <Icon prefix="fa" name="money" className="money-icon"/>MyMoney
+                </Header.H1>
+            </Site.Header>
+            <Site.Nav>
+                <Nav.Link hasSubNav value="Dashboard" icon="list" to="/#/" > Dash</Nav.Link>
+            </Site.Nav>
         </div>
     )
 }
