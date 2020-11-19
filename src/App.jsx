@@ -1,9 +1,13 @@
 import PageHeader from './template/Header/'
+import Sidebar from './template/Sidebar/'
 
 function App() {
   return (
     <div className="App">
-      <PageHeader />
+      <div class="grid-container">
+        <Sidebar />
+        <PageHeader />
+      </div>
     </div>
   );
 }
