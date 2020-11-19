@@ -1,5 +1,6 @@
 import PageHeader from './template/Header/'
 import Sidebar from './template/Sidebar/'
+import './App.css'
 
 function App() {
   return (
