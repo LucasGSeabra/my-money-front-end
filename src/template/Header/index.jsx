@@ -1,19 +1,36 @@
 import React from 'react'
-import {Header, Nav, Site, Icon} from 'tabler-react'
-import './style.css'
+import styled from 'styled-components'
+import {Wallet} from '@styled-icons/ionicons-outline'
+
+const HeaderContainer = styled.div`
+    grid-area: head;
+    height: 100%;
+    background-color: #252529;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding: 10px 75px;
+`
+
+const HeaderTitle = styled.h1`
+    font: 40px rubik;
+    font-weight: 700;
+`
+
+const WalletIcon = styled(Wallet)`
+    color: white;
+    width: 40px;
+    height: 40px; 
+`
 
 function PageHeader(props) {
     return(
-        <div id="page-header">
-            <Site.Header className="nav">
-                <Header.H1>
-                    <Icon prefix="fa" name="money" className="money-icon"/>MyMoney
-                </Header.H1>
-            </Site.Header>
-            <Site.Nav>
-                <Nav.Link hasSubNav value="Dashboard" icon="list" to="/#/" > Dash</Nav.Link>
-            </Site.Nav>
-        </div>
+        <HeaderContainer>
+            <WalletIcon />
+            <HeaderTitle>MyMoney</HeaderTitle>
+        </HeaderContainer>
     )
 }
 
