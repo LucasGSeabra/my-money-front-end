@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 72px 1fr;
+    grid-template-areas:
+        "head head head head"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main";
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: main;
+}
