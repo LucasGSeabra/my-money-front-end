@@ -8,6 +8,7 @@ function App() {
       <div class="grid-container">
         <Sidebar />
         <PageHeader />
+        <div className="content" />
       </div>
     </div>
   );
