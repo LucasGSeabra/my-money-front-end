@@ -24,4 +24,5 @@ html, body, #root {
 
 .content {
     grid-area: main;
+    background-color: rgba(250, 250, 250);
 }
