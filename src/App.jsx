@@ -1,6 +1,6 @@
-import PageHeader from './template/Header/'
-import Sidebar from './template/Sidebar/'
-import Footer from './template/Footer/'
+import PageHeader from './components/Header'
+import Sidebar from './components/Sidebar'
+import Footer from './components/Footer'
 import Routes from './routes'
 
 import './App.css'
