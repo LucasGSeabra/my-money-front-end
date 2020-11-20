@@ -1,6 +1,8 @@
 import PageHeader from './template/Header/'
 import Sidebar from './template/Sidebar/'
 import Footer from './template/Footer/'
+import Routes from './routes'
+
 import './App.css'
 
 function App() {
@@ -9,7 +11,9 @@ function App() {
       <div class="grid-container">
         <PageHeader />
         <Sidebar />
-        <div className="content" />
+        <div className="content">
+          <Routes />
+        </div>
         <Footer />
       </div>
     </div>
