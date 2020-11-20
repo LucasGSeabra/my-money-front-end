@@ -13,16 +13,13 @@ html, body, #root {
     height: 100vh;
     display: grid;
     grid-template-columns: 20% 1fr;
-    grid-template-rows: 72px 1fr;
+    grid-template-rows: 72px 1fr 50px;
     grid-template-areas:
         "head head head head"
         "sidebar main main main"
         "sidebar main main main"
-        "sidebar main main main";
-}
-
-.sidebar {
-    grid-area: sidebar;
+        "sidebar main main main"
+        "foot foot foot foot";
 }
 
 .content {
