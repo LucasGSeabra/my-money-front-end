@@ -1,11 +1,14 @@
 import React from 'react'
 import ContentHeader from '../../components/ContentHeader'
+import Content from '../../components/Content'
 
 function Dashboard(props) {
     return (
         <div>
             <ContentHeader title="Dashboard" small="Versão 1.0" />
-            <h1>Dashboard</h1>
+            <Content>
+                Dashboard
+            </Content>
         </div>
     )
 }
