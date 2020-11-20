@@ -42,18 +42,17 @@ const SidebarMenuItemLabel = styled.p`
     color: #fff;
     font-weight: 500;
     text-align: left;
-    color: #ffffff;
     margin-left: 5px;
 `
 
 const GridIcon = styled(Grid)`
-    color: white;
+    color: #fff;
     width: 24px;
     height: 24px;  
 `
 
 const CashIcon = styled(Cash)`
-    color: white;
+    color: #fff;
     width: 24px;
     height: 24px;  
 `
