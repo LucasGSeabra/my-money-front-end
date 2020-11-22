@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import styled from 'styled-components'
 import ContentHeader from '../../components/ContentHeader'
 import Content from '../../components/Content'
 import CardComponent from '../../components/Card'
+import { getSummary } from './dashboardActions'
 import { Cash, Card, Wallet } from '@styled-icons/ionicons-outline'
 
 const CashIcon = styled(Cash)`
@@ -24,17 +27,23 @@ const WalletIcon = styled(Wallet)`
 `
 
 function Dashboard(props) {
+    const {credit, debt} = props.summary
+
+    useEffect(() => {
+        props.getSummary()
+    }, [])  
+      
     return (
         <div>
             <ContentHeader title="Dashboard" small="Versão 1.0" />
             <Content>
-                <CardComponent theme="cred" val="35" title="Total de Créditos">
+                <CardComponent theme="cred" val={credit} title="Total de Créditos">
                 <CashIcon />
                 </CardComponent>
-                <CardComponent theme="deb" val="35" title="Total de Débitos">
+                <CardComponent theme="deb" val={debt} title="Total de Débitos">
                 <CardIcon />
                 </CardComponent>
-                <CardComponent theme="cons" val="35" title="Total Consolidado">
+                <CardComponent theme="cons" val={credit - debt} title="Total Consolidado">
                 <WalletIcon />
                 </CardComponent>
             </Content>
@@ -42,4 +51,6 @@ function Dashboard(props) {
     )
 }
 
-export default Dashboard
+const mapStateToProps = state => ({ summary: state.dashboard.summary })
+const mapDispatchToProps = dispatch => bindActionCreators({ getSummary }, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
