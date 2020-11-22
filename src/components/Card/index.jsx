@@ -1,5 +1,24 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+const CardContainer = styled.div`
+    width: 30%;
+    margin: 40px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    aling-items: center;
+    justify-content: space-between;
+    ${props => props.theme === 'cred' && css`
+        background: rgb(47, 151, 71);
+    `}
+    ${props => props.theme === 'deb' && css`
+        background: rgb(151, 71, 47);
+    `}
+    ${props => props.theme === 'cons' && css`
+        background: rgb(47, 71, 151);
+    `}
+`
 
 const CardInfo = styled.div`
     height: 100%;
@@ -16,13 +35,13 @@ const CardVal = styled.h1`
 
 function Card(props) {
     return (
-        <div>
+        <CardContainer theme={props.theme}>
             <CardInfo>
                 <CardVal>{props.val}</CardVal>
                 {props.title}   
             </CardInfo>
                 {props.children}
-        </div>
+        </CardContainer>
     )
 }
 
