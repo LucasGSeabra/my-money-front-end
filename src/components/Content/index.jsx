@@ -1,10 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const ContentContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`
 
 function Content(props) {
     return (
-        <div>
+        <ContentContainer>
             {props.children}
-        </div>
+        </ContentContainer>
     )
 }
 
