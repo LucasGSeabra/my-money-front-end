@@ -21,15 +21,18 @@ const CardContainer = styled.div`
 `
 
 const CardInfo = styled.div`
+    font: 24px rubik;
     height: 100%;
     display: flex;
     flex-direction: column;
     aling-items: center; 
+    justify-content: center;
     margin-left: 10px;
+    color: #fff;
 `
 
 const CardVal = styled.h1`
-    font: 24px rubik;
+    font: 42px rubik;
     font-weight: 600;
 `
 
@@ -37,7 +40,7 @@ function Card(props) {
     return (
         <CardContainer theme={props.theme}>
             <CardInfo>
-                <CardVal>{props.val}</CardVal>
+                <CardVal>R$ {props.val}</CardVal>
                 {props.title}   
             </CardInfo>
                 {props.children}
