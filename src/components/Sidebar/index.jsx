@@ -60,11 +60,11 @@ function Sidebar(props) {
     return (
         <SidebarContainer>
             <SidebarMenu>            
-                <SidebarMenuItem href="/">
+                <SidebarMenuItem href="#/">
                     <GridIcon />
                     <SidebarMenuItemLabel>Dashboard</SidebarMenuItemLabel>
                 </SidebarMenuItem>
-                <SidebarMenuItem href="/billingCycles">
+                <SidebarMenuItem href="#/billingCycles">
                     <CashIcon />
                     <SidebarMenuItemLabel>Ciclo de Pagamento</SidebarMenuItemLabel>
                 </SidebarMenuItem>
