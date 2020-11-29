@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Tab } from 'react-bootstrap'
 
 const ContentContainer = styled.div`
     height: 100%;
@@ -9,9 +10,11 @@ const ContentContainer = styled.div`
 
 function TabContent(props) {
     return (
-        <ContentContainer>
-            {props.children}
-        </ContentContainer>
+        <Tab eventKey={props.key}  title={props.title}>
+            <ContentContainer>
+                {props.children}
+            </ContentContainer>                
+        </Tab>
     )
 }
 
