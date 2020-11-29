@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Tab, Tabs} from 'react-bootstrap'
-import TabContent from '../TabContent/'
+import { Tabs } from 'react-bootstrap'
 
 const TabContainer = styled.div`
     width: 100%;
@@ -13,11 +12,7 @@ function TabsContainer(props) {
     return (
         <TabContainer>
             <Tabs activeKey={tab} onSelect={key => setTab(key)}>
-                <Tab eventKey="1"  title="Lista">
-                    <TabContent><h1>Lista</h1></TabContent>                
-                </Tab>
-                <Tab eventKey="2"  title="Cadastro">
-                </Tab>
+                {props.children}
             </Tabs>
         </TabContainer>
     )
