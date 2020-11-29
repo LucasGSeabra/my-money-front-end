@@ -25,11 +25,10 @@ const SidebarMenuItem = styled.a`
     width: 100%;
     height: 40px;
     display: flex;
-    align-items: center;
+    align-items: center !important;
     padding-left: 10px;
     justify-content: left;
-    padding: 0px 30px;
-    text-decoration: none;
+    text-decoration: none !important;
     &:hover {
         background: rgba(200, 200, 200, 0.05);  
         box-shadow: inset 3px 0 0 0 #ffffff;    
@@ -42,7 +41,7 @@ const SidebarMenuItemLabel = styled.p`
     color: #fff;
     font-weight: 500;
     text-align: left;
-    margin-left: 5px;
+    margin: 0px 5px !important;
 `
 
 const GridIcon = styled(Grid)`
@@ -60,7 +59,7 @@ const CashIcon = styled(Cash)`
 function Sidebar(props) {
     return (
         <SidebarContainer>
-            <SidebarMenu> 
+            <SidebarMenu>            
                 <SidebarMenuItem href="/">
                     <GridIcon />
                     <SidebarMenuItemLabel>Dashboard</SidebarMenuItemLabel>
