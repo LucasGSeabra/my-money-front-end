@@ -10,7 +10,7 @@ const ContentContainer = styled.div`
 
 function TabContent(props) {
     return (
-        <Tab eventKey={props.key}  title={props.title}>
+        <Tab eventKey={props.eventKey}  title={props.title}>
             <ContentContainer>
                 {props.children}
             </ContentContainer>                

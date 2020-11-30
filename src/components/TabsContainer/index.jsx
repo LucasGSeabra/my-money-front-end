@@ -7,11 +7,10 @@ const TabContainer = styled.div`
 `
 
 function TabsContainer(props) {
-    const [tab, setTab] = useState(1)
 
     return (
         <TabContainer>
-            <Tabs activeKey={tab} onSelect={key => setTab(key)}>
+            <Tabs activeKey={props.key} onSelect={() => props.onSelect()}>
                 {props.children}
             </Tabs>
         </TabContainer>
