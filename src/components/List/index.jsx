@@ -6,6 +6,7 @@ import { getList } from '../../pages/BillingCycle/billingCycleActions'
 
 function List(props) {
 
+    const list = props.list || []
 
     useEffect(() => {
         props.getList()
@@ -18,12 +19,18 @@ function List(props) {
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Mes</th>
+                        <th>Mês</th>
                         <th>Ano</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    { list.map(bc => (
+                        <tr key={bc._id}>
+                            <td>{bc.name}</td>
+                            <td>{bc.month}</td>
+                            <td>{bc.year}</td>
+                        </tr>
+                    )) }
                 </tbody>
             </Table>
         </div>
