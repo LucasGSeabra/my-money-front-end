@@ -6,6 +6,7 @@ import Content from '../../components/Content/'
 import TabsContainer from '../../components/TabsContainer/'
 import Tab from '../../components/TabContent/'
 import List from '../../components/List/'
+import Form from '../../components/Form/'
 import { create } from './billingCycleActions'
 
 
@@ -21,7 +22,7 @@ function BillingCycle(props) {
                         <List></List>
                     </Tab>
                     <Tab eventKey="2" title="Cadastro">
-                        Cadastro
+                        <Form></Form>
                     </Tab>
                 </TabsContainer>
             </Content>
