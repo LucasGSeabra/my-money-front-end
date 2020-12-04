@@ -17,7 +17,7 @@ function BillingCycle(props) {
         <div>
             <ContentHeader title="Billing Cycles" small="Cadastro" />
             <Content>
-                <TabsContainer key={tabKey} onSelect={key => setTabKey(key)} >
+                <TabsContainer tabKey={tabKey} onSelect={key => setTabKey(key)} >
                     <Tab eventKey="1" title="Lista">
                         <List></List>
                     </Tab>
