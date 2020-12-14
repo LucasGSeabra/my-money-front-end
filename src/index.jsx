@@ -5,8 +5,10 @@ import { Provider } from 'react-redux'
 import promise from 'redux-promise'
 import App from './App';
 import reducers from './reducers'
+import reduxThunk from 'redux-thunk'
+import multi from 'redux-multi'
 
-const store = applyMiddleware(promise)(createStore)(reducers)
+const store = applyMiddleware(promise, multi, reduxThunk)(createStore)(reducers)
 
 ReactDOM.render(
     <React.StrictMode>
