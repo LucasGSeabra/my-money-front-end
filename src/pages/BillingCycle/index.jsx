@@ -22,7 +22,7 @@ function BillingCycle(props) {
                         <List></List>
                     </Tab>
                     <Tab eventKey="2" title="Cadastro">
-                        <Form></Form>
+                        <Form onSubmit={props.create}></Form>
                     </Tab>
                 </TabsContainer>
             </Content>
