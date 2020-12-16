@@ -11,7 +11,6 @@ import { create } from './billingCycleActions'
 
 
 function BillingCycle(props) {
-    const [tabKey, setTabKey] = useState(1)
 
     return (
         <div>
@@ -19,9 +18,13 @@ function BillingCycle(props) {
             <Content>
                 <TabsContainer tabKey={tabKey} onSelect={key => setTabKey(key)} >
                     <Tab eventKey="1" title="Lista">
+                    <Tab eventKey={1} title="Lista">
                         <List></List>
                     </Tab>
-                    <Tab eventKey="2" title="Cadastro">
+                    <Tab eventKey={2} title="Cadastro">
+                        <Form onSubmit={props.create}></Form>
+                    </Tab>
+                    <Tab eventKey={3} title="Editar" disabled={true}>
                         <Form onSubmit={props.create}></Form>
                     </Tab>
                 </TabsContainer>
