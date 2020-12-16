@@ -9,7 +9,12 @@ const FormContainer = styled(Form)`
     padding 15px 0px 10px 15px ;
 `
 
+const ReduxFormControl = ({input, meta, ...props}) => {
+    return <Form.Control {...props} {...input} />
+};
+
 function FormComponent(props) {
+    console.log(props)
     return (
         <div>
             <FormContainer onSubmit={(e) => props.handleSubmit(e)}>
@@ -17,15 +22,15 @@ function FormComponent(props) {
                     <Form.Row>
                         <Col lg={3} sm={12}>
                             <Form.Label>Nome</Form.Label>
-                            <Field name="name" component={Form.Control}/>
+                            <Field name="name" component={ReduxFormControl}/>
                         </Col>
                         <Col lg={3} sm={12}>
                             <Form.Label>Mês</Form.Label>
-                            <Field name="month" component={Form.Control}/>
+                            <Field name="month" component={ReduxFormControl}/>
                         </Col>
                         <Col lg={3} sm={12}>
                             <Form.Label>Ano</Form.Label>
-                            <Field name="year" component={Form.Control}/>
+                            <Field name="year" component={ReduxFormControl}/>
                         </Col>  
                     </Form.Row>
                 </Form.Group>
