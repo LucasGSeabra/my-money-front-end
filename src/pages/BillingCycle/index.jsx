@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import ContentHeader from '../../components/ContentHeader/'
@@ -7,7 +7,7 @@ import TabsContainer from '../../components/TabsContainer/'
 import Tab from '../../components/TabContent/'
 import List from '../../components/List/'
 import Form from '../../components/Form/'
-import { create } from './billingCycleActions'
+import { create, changeTab } from './billingCycleActions'
 
 
 function BillingCycle(props) {
@@ -16,8 +16,7 @@ function BillingCycle(props) {
         <div>
             <ContentHeader title="Billing Cycles" small="Cadastro" />
             <Content>
-                <TabsContainer tabKey={tabKey} onSelect={key => setTabKey(key)} >
-                    <Tab eventKey="1" title="Lista">
+                <TabsContainer tabKey={props.tabKey} changeTab={props.changeTab}>
                     <Tab eventKey={1} title="Lista">
                         <List></List>
                     </Tab>
@@ -33,5 +32,6 @@ function BillingCycle(props) {
     )
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({ create }, dispatch) 
-export default connect(null, mapDispatchToProps)(BillingCycle)
+const mapStateToProps = state => ({tabKey: state.billingCycle.tabKey})
+const mapDispatchToProps = dispatch => bindActionCreators({ create, changeTab }, dispatch) 
+export default connect(mapStateToProps, mapDispatchToProps)(BillingCycle)

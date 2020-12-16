@@ -26,3 +26,10 @@ export function create(values) {
         })
     }    
 }
+
+export function changeTab(value) {
+    return {
+        type: 'CHANGE_TAB',
+        payload: value
+    }
+}

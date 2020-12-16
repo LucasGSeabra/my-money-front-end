@@ -10,7 +10,7 @@ function TabsContainer(props) {
 
     return (
         <TabContainer>
-            <Tabs activeKey={props.tabKey} onSelect={() => props.onSelect()}>
+            <Tabs activeKey={props.tabKey} onSelect={(e) => props.changeTab(e)}>
                 {props.children}
             </Tabs>
         </TabContainer>
