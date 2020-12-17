@@ -22,15 +22,15 @@ function FormComponent(props) {
                     <Form.Row>
                         <Col lg={3} sm={12}>
                             <Form.Label>Nome</Form.Label>
-                            <Field name="name" component={ReduxFormControl}/>
+                            <Field name="name" component={ReduxFormControl} readOnly={props.readOnly} />
                         </Col>
                         <Col lg={3} sm={12}>
                             <Form.Label>Mês</Form.Label>
-                            <Field name="month" component={ReduxFormControl}/>
+                            <Field name="month" component={ReduxFormControl} readOnly={props.readOnly} />
                         </Col>
                         <Col lg={3} sm={12}>
                             <Form.Label>Ano</Form.Label>
-                            <Field name="year" component={ReduxFormControl}/>
+                            <Field name="year" component={ReduxFormControl} readOnly={props.readOnly} />
                         </Col>  
                     </Form.Row>
                 </Form.Group>
