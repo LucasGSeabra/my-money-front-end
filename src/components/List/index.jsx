@@ -4,7 +4,13 @@ import { Table, Button } from 'react-bootstrap'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getList, initializeForm } from '../../pages/BillingCycle/billingCycleActions'
-import { getList } from '../../pages/BillingCycle/billingCycleActions'
+import { Pencil } from '@styled-icons/ionicons-outline'
+
+const PencilIcon = styled(Pencil)`
+    width: 16px;
+    height: 16px;  
+    color: #fff
+`
 
 function List(props) {
 
@@ -37,6 +43,7 @@ function List(props) {
                             <td>{bc.month}</td>
                             <td>{bc.year}</td>
                             <td><Button variant="warning" onClick={() => editBillingCycle(bc)}>
+                                <PencilIcon></PencilIcon>
                                 </Button>
                             </td>
                         </tr>
