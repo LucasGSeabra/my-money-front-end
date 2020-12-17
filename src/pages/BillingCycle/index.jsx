@@ -7,7 +7,7 @@ import TabsContainer from '../../components/TabsContainer/'
 import Tab from '../../components/TabContent/'
 import List from '../../components/List/'
 import Form from '../../components/Form/'
-import { create } from './billingCycleActions'
+import { create, update, remove } from './billingCycleActions'
 
 
 function BillingCycle(props) {
@@ -23,9 +23,10 @@ function BillingCycle(props) {
                         <List changeTab={setTabKey}></List>
                     </Tab>
                     <Tab eventKey={2} title="Cadastro">
-                        <Form onSubmit={props.create}></Form>
+                        <Form onSubmit={props.create} />
                     </Tab>
                     <Tab eventKey={3} title="Editar" disabled={true}>
+                        <Form onSubmit={props.update} />
                         <Form />
                     </Tab>
                 </TabsContainer>
@@ -35,5 +36,5 @@ function BillingCycle(props) {
 }
 
 
-const mapDispatchToProps = dispatch => bindActionCreators({ create }, dispatch) 
+const mapDispatchToProps = dispatch => bindActionCreators({ create, update, remove }, dispatch) 
 export default connect(null, mapDispatchToProps)(BillingCycle)
