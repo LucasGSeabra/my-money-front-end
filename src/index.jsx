@@ -8,7 +8,8 @@ import reducers from './reducers'
 import reduxThunk from 'redux-thunk'
 import multi from 'redux-multi'
 
-const store = applyMiddleware(promise, multi, reduxThunk)(createStore)(reducers)
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = applyMiddleware(promise, multi, reduxThunk)(createStore)(reducers, devTools)
 
 ReactDOM.render(
     <React.StrictMode>
