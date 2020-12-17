@@ -14,7 +14,7 @@ const ReduxFormControl = ({input, meta, ...props}) => {
 };
 
 function FormComponent(props) {
-    console.log(props)
+
     return (
         <div>
             <FormContainer onSubmit={(e) => props.handleSubmit(e)}>
@@ -40,4 +40,4 @@ function FormComponent(props) {
     )
 }
 
-export default reduxForm({form: 'FormComponent'})(FormComponent)
+export default reduxForm({form: 'FormComponent', destroyOnUnmount: false})(FormComponent)
