@@ -11,9 +11,10 @@ export function getList() {
     }
 }
 
-export function create(values) {
+function submit(values, method) {
     return dispatch => {
-        axios.post(`${BASE_URL}/billingCycles`, values)
+        const id = values._id ? values._id : ''
+        axios[method](`${BASE_URL}/billingCycles/${id}`, values)
         .then(resp => {
             toastr.success('Sucesso', 'Operação Realizada com Sucesso')
             dispatch([
