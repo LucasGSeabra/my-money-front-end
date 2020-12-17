@@ -27,7 +27,9 @@ function BillingCycle(props) {
                     </Tab>
                     <Tab eventKey={3} title="Editar" disabled={true}>
                         <Form onSubmit={props.update} />
-                        <Form />
+                    </Tab>
+                    <Tab eventKey={4} title="Remover" disabled={true}>
+                        <Form onSubmit={props.remove} readOnly={true} />
                     </Tab>
                 </TabsContainer>
             </Content>
