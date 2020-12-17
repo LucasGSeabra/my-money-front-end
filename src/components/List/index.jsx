@@ -4,9 +4,15 @@ import { Table, Button } from 'react-bootstrap'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getList, initializeForm } from '../../pages/BillingCycle/billingCycleActions'
-import { Pencil } from '@styled-icons/ionicons-outline'
+import { Pencil, TrashBin } from '@styled-icons/ionicons-outline'
 
 const PencilIcon = styled(Pencil)`
+    width: 16px;
+    height: 16px;  
+    color: #fff
+`
+
+const TrashIcon = styled(TrashBin)`
     width: 16px;
     height: 16px;  
     color: #fff
@@ -16,8 +22,8 @@ function List(props) {
 
     const list = props.list || []
 
-    function editBillingCycle(billingCycle) {
-        props.changeTab(3)
+    function editBillingCycle(billingCycle, tab) {
+        props.changeTab(tab)
         props.initializeForm(billingCycle)     
     }
 
@@ -42,8 +48,11 @@ function List(props) {
                             <td>{bc.name}</td>
                             <td>{bc.month}</td>
                             <td>{bc.year}</td>
-                            <td><Button variant="warning" onClick={() => editBillingCycle(bc)}>
+                            <td><Button variant="warning" onClick={() => editBillingCycle(bc, 3)}>
                                 <PencilIcon></PencilIcon>
+                                </Button>
+                                <Button variant="danger" onClick={() => editBillingCycle(bc, 4)}>
+                                <TrashIcon></TrashIcon>
                                 </Button>
                             </td>
                         </tr>
