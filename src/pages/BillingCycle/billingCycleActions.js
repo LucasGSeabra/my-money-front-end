@@ -28,6 +28,18 @@ function submit(values, method) {
     }    
 }
 
+export function create(values) {
+    return submit(values, 'post')    
+}
+
+export function update(values) {
+    return submit(values, 'put')    
+}
+
+export function remove(values) {
+    return submit(values, 'delete')    
+}
+
 export function initializeForm(billingCycle) {
     return [
         initialize('FormComponent', billingCycle)
