@@ -23,13 +23,13 @@ function BillingCycle(props) {
                         <List changeTab={setTabKey}></List>
                     </Tab>
                     <Tab eventKey={2} title="Cadastro">
-                        <Form onSubmit={props.create} />
+                        <Form onSubmit={props.create} buttonTitle={'Cadastrar'} />
                     </Tab>
                     <Tab eventKey={3} title="Editar" disabled={true}>
-                        <Form onSubmit={props.update} />
+                        <Form onSubmit={props.update} buttonTitle={'Editar'} />
                     </Tab>
                     <Tab eventKey={4} title="Remover" disabled={true}>
-                        <Form onSubmit={props.remove} readOnly={true} />
+                        <Form onSubmit={props.remove} buttonTitle={'Remover'} readOnly={true} />
                     </Tab>
                 </TabsContainer>
             </Content>
