@@ -17,6 +17,9 @@ const TrashIcon = styled(TrashBin)`
     height: 16px;  
     color: #fff
 `
+const ListButton = styled(Button)`
+    margin-right: 5px;
+`
 
 function List(props) {
 
@@ -48,12 +51,12 @@ function List(props) {
                             <td>{bc.name}</td>
                             <td>{bc.month}</td>
                             <td>{bc.year}</td>
-                            <td><Button variant="warning" onClick={() => editBillingCycle(bc, 3)}>
+                            <td><ListButton variant="warning" onClick={() => editBillingCycle(bc, 3)}>
                                 <PencilIcon></PencilIcon>
-                                </Button>
-                                <Button variant="danger" onClick={() => editBillingCycle(bc, 4)}>
+                                </ListButton>
+                                <ListButton variant="danger" onClick={() => editBillingCycle(bc, 4)}>
                                 <TrashIcon></TrashIcon>
-                                </Button>
+                                </ListButton>
                             </td>
                         </tr>
                     )) }
