@@ -14,6 +14,12 @@ const ReduxFormControl = ({input, meta, ...props}) => {
 };
 
 function FormComponent(props) {
+    
+    const variant = props.buttonTitle === 'Cadastrar'
+        ? 'primary'
+        : props.buttonTitle === 'Editar'
+        ? 'warning'
+        : 'danger'
 
     return (
         <div>
@@ -34,10 +40,10 @@ function FormComponent(props) {
                         </Col>  
                     </Form.Row>
                 </Form.Group>
-                <Button variant="primary" type="submit">Salvar</Button>
+                <Button variant={variant} type="submit">{ props.buttonTitle }</Button>
             </FormContainer>
         </div>
     )
 }
 
-export default reduxForm({form: 'FormComponent', destroyOnUnmount: false})(FormComponent)
+export default reduxForm({form: 'FormComponent', destroyOnUnmount: false })(FormComponent)
