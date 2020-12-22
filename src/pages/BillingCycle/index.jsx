@@ -6,7 +6,7 @@ import Content from '../../components/Content/'
 import TabsContainer from '../../components/TabsContainer/'
 import Tab from '../../components/TabContent/'
 import List from '../../components/List/'
-import Form from '../../components/Form/'
+import BillingCycleForm from '../../components/BillingCycleForm/'
 import { create, update, remove, resetForm } from './billingCycleActions'
 
 
@@ -23,13 +23,13 @@ function BillingCycle(props) {
                         <List changeTab={setTabKey}></List>
                     </Tab>
                     <Tab eventKey={2} title="Cadastro">
-                        <Form onSubmit={props.create} buttonTitle={'Cadastrar'} />
+                        <BillingCycleForm onSubmit={props.create} buttonTitle={'Cadastrar'} />
                     </Tab>
                     <Tab eventKey={3} title="Editar" disabled={true}>
-                        <Form onSubmit={props.update} buttonTitle={'Editar'} />
+                        <BillingCycleForm onSubmit={props.update} buttonTitle={'Editar'} />
                     </Tab>
                     <Tab eventKey={4} title="Remover" disabled={true}>
-                        <Form onSubmit={props.remove} buttonTitle={'Remover'} readOnly={true} />
+                        <BillingCycleForm onSubmit={props.remove} buttonTitle={'Remover'} readOnly={true} />
                     </Tab>
                 </TabsContainer>
             </Content>
