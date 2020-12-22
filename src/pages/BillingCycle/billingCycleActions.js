@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { toastr } from 'react-redux-toastr'
-import { reset as resetForm, initialize } from 'redux-form'
+import { reset, initialize } from 'redux-form'
 const BASE_URL = 'http://localhost:3003/api'
 
 export function getList() {
@@ -38,6 +38,10 @@ export function update(values) {
 
 export function remove(values) {
     return submit(values, 'delete')    
+}
+
+export function resetForm() {
+    return dispatch => dispatch(reset('billingCycleForm'))
 }
 
 export function initializeForm(billingCycle) {
