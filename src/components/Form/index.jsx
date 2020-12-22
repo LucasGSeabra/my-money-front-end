@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Form, Button, Row, Col } from 'react-bootstrap'
+import { Form, Button, Col } from 'react-bootstrap'
 import { reduxForm, Field } from 'redux-form'
 
 const FormContainer = styled(Form)`
@@ -19,7 +19,7 @@ function FormComponent(props) {
         ? 'primary'
         : props.buttonTitle === 'Editar'
         ? 'warning'
-        : 'danger'
+        : 'danger'  
 
     return (
         <div>
@@ -46,4 +46,4 @@ function FormComponent(props) {
     )
 }
 
-export default reduxForm({form: 'FormComponent', destroyOnUnmount: false })(FormComponent)
+export default reduxForm({form: 'billingCycleForm', destroyOnUnmount: false })(FormComponent)

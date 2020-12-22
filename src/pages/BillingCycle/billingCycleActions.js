@@ -18,7 +18,7 @@ function submit(values, method) {
         .then(resp => {
             toastr.success('Sucesso', 'Operação Realizada com Sucesso')
             dispatch([
-                resetForm('FormComponent'),
+                reset('billingCycleForm'),
                 getList()
             ])
         })
@@ -42,6 +42,6 @@ export function remove(values) {
 
 export function initializeForm(billingCycle) {
     return [
-        initialize('FormComponent', billingCycle)
+        initialize('billingCycleForm', billingCycle)
     ]  
 }
