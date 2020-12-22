@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Form, Button, Col } from 'react-bootstrap'
 import { reduxForm } from 'redux-form'
 import Input from '../Input'
+import BillingDetails from '../BillingDetails'
 
 const FormContainer = styled(Form)`
     width: 100%;
@@ -34,6 +35,14 @@ function BillingCycleForm(props) {
                         <Col lg={4} sm={12}>
                             <Form.Label>Ano</Form.Label>
                             <Input name="year" readOnly={props.readOnly} />
+                        </Col>  
+                    </Form.Row>
+                    <Form.Row>
+                        <Col lg={6} sm={12}>
+                            <BillingDetails title="Créditos" />
+                        </Col>
+                        <Col lg={6} sm={12}>
+                            <BillingDetails title="Débitos" />
                         </Col>
                     </Form.Row>
                 </Form.Group>
