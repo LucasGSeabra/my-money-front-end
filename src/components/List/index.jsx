@@ -46,15 +46,15 @@ function List(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    { list.map(bc => (
-                        <tr key={bc._id}>
-                            <td>{bc.name}</td>
-                            <td>{bc.month}</td>
-                            <td>{bc.year}</td>
-                            <td><ListButton variant="warning" onClick={() => editBillingCycle(bc, 3)}>
+                    { list.map(billingCycle => (
+                        <tr key={billingCycle._id}>
+                            <td>{billingCycle.name}</td>
+                            <td>{billingCycle.month}</td>
+                            <td>{billingCycle.year}</td>
+                            <td><ListButton variant="warning" onClick={() => editBillingCycle(billingCycle, 3)}>
                                 <PencilIcon></PencilIcon>
                                 </ListButton>
-                                <ListButton variant="danger" onClick={() => editBillingCycle(bc, 4)}>
+                                <ListButton variant="danger" onClick={() => editBillingCycle(billingCycle, 4)}>
                                 <TrashIcon></TrashIcon>
                                 </ListButton>
                             </td>
