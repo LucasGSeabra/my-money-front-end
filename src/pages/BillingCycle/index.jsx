@@ -16,7 +16,7 @@ function BillingCycle(props) {
    
     return (
         <div>
-            <ContentHeader title="Billing Cycles" small="Cadastro" />
+            <ContentHeader title="Ciclos de Pagamento" small="Cadastro" />
             <Content>
                 <TabsContainer tabKey={tabKey} changeTab={setTabKey} reset={resetForm}>
                     <Tab eventKey={1} title="Lista">
