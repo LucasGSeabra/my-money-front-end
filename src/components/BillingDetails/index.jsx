@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { Table, Button } from 'react-bootstrap'
 import Input from '../Input'
 import { Remove } from '@styled-icons/ionicons-outline'
+import { arrayInsert, arrayRemove } from 'redux-form'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 const RemoveIcon = styled(Remove)`
     width: 16px;
@@ -15,6 +18,10 @@ function BillingDetails(props){
     const detailsList = props.detailsList || []
 
     const title = props.type === 'credits' ? 'Créditos' : 'Débitos'
+
+    function addItem(){
+        props.arrayInsert('billingCycleForm', props.type, detailsList.length + 1, {})
+    }
     return (
         <div>
             <h5>{title}</h5>
@@ -51,4 +58,5 @@ function BillingDetails(props){
     )
 }
 
-export default BillingDetails
+const mapDispatchToProps = dispatch => bindActionCreators({arrayInsert, arrayRemove}, dispatch)
+export default connect(null, mapDispatchToProps)(BillingDetails)
