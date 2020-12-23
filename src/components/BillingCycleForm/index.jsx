@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Form, Button, Col } from 'react-bootstrap'
-import { reduxForm } from 'redux-form'
+import { reduxForm, formValueSelector } from 'redux-form'
 import Input from '../Input'
 import BillingDetails from '../BillingDetails'
+import { bindActionCreators} from 'redux'
+import { connect } from 'react-redux'
 
 const FormContainer = styled(Form)`
     width: 100%;
@@ -39,10 +41,10 @@ function BillingCycleForm(props) {
                     </Form.Row>
                     <Form.Row>
                         <Col lg={6} sm={12}>
-                            <BillingDetails title="Créditos" />
+                            <BillingDetails detailsList={props.credits} type="credits" />
                         </Col>
                         <Col lg={6} sm={12}>
-                            <BillingDetails title="Débitos" />
+                            <BillingDetails detailsList={props.debts} type="debts" />
                         </Col>
                     </Form.Row>
                 </Form.Group>
@@ -52,4 +54,7 @@ function BillingCycleForm(props) {
     )
 }
 
-export default reduxForm({form: 'billingCycleForm', destroyOnUnmount: false })(BillingCycleForm)
+BillingCycleForm = reduxForm({form: 'billingCycleForm', destroyOnUnmount: false })(BillingCycleForm)
+const selector = formValueSelector('billingCycleForm')
+const mapStateToProps = state => ({credits: selector(state, 'credits'), debts: selector(state, 'debts')})
+export default connect(mapStateToProps)(BillingCycleForm)
