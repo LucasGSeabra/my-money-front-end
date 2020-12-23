@@ -22,6 +22,11 @@ function BillingDetails(props){
     function addItem(){
         props.arrayInsert('billingCycleForm', props.type, detailsList.length + 1, {})
     }
+
+    function removeItem(index){
+        props.arrayRemove('billingCycleForm', props.type, index)
+    }
+
     return (
         <div>
             <h5>{title}</h5>
