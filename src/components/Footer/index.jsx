@@ -18,17 +18,25 @@ const FootLink = styled.a`
     color: #fff;
     text-decoration: none;
     font-weight: 200;
+    margin-left: 5px;
     &:hover {
         cursor: pointer;
         color: gray;
     }
 `
+const FootText = styled.p`
+    font: 16px rubik;
+    color: #fff;
+    font-weight: 200;
+    margin:0
+`
 
 function Footer(props) {
     return(
         <FooterContainer>
+            <FootText>Feito por</FootText>
             <FootLink href="https://github.com/LucasGSeabra">
-                Feito por: Lucas Gimenez
+                Lucas Gimenez
             </FootLink> 
         </FooterContainer>
     )
