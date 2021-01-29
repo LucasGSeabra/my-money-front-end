@@ -20,11 +20,11 @@ function submit(url, values) {
 }
 
 export function login(values) {
-    return submit(values, `${BASE_URL}/login`)
+    return submit(`${BASE_URL}/login`, values)
 }
 
 export function signup(values) {
-    return submit(values, `${BASE_URL}/signup`)
+    return submit(`${BASE_URL}/signup`, values)
 }
 
 export function logout() {
