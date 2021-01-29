@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Form, Button } from 'react-bootstrap'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { login, signup } from '../../pages/Login/loginActions'
 
 const FormContainer = styled(Form)`
     width: 30%;
@@ -32,6 +35,23 @@ function LoginForm(props) {
     const confirmButtonText = changeFormToSignUp ? 'Cadastrar' : 'Entrar'
     const changeButtonText = changeFormToSignUp ? 'Entrar' : 'Cadastre-se'
     const changeTextContent = changeFormToSignUp ? 'Já é cadastrado?' : 'Não é cadastrado?'  
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        if(changeFormToSignUp) {
+            props.signup({
+                name: e.target.name.value,
+                email: e.target.email.value,
+                password: e.target.password.value,
+                confirm_password: e.target.confirmPassword.value
+            })
+        } else {
+            props.login({
+                email: e.target.email.value,
+                password: e.target.password.value
+            })
+        }
+    }
 
     return (
         <FormContainer onSubmit={(e) => handleSubmit(e)}>
@@ -70,4 +90,5 @@ function LoginForm(props) {
     )
 }
 
-export default LoginForm
+const mapDispatchToProps = dispatch => bindActionCreators({login, signup}, dispatch)
+export default connect(null, mapDispatchToProps)(LoginForm)
